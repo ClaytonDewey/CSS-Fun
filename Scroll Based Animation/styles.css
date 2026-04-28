@@ -1,0 +1,94 @@
+body {
+  height: 250vh;
+  padding: 0;
+  background: hsl(210deg 15% 6%);
+  color: white;
+}
+p {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.box {
+  display: block;
+  width: 100px;
+  height: 100px;
+  margin-inline: auto;
+  background: hsl(45deg 100% 50%);
+  border-top: 10px solid hsl(35deg 100% 40%);
+  border-radius: 4px;
+  --super-ease-out: cubic-bezier(0.15, 0.75, 0.35, 1);
+  /* animation: spin var(--super-ease-out); */
+  animation: spin linear;
+  animation-timeline: view();
+  animation-range: entry;
+}
+
+.elem {
+  background: goldenrod;
+  width: 100px;
+  height: 100px;
+  margin-inline: auto;
+  border-radius: 4px;
+  animation: fadeIn;
+  animation-timeline: view();
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.shape {
+  width: 100px;
+  height: 100px;
+
+  animation: slideIn backwards;
+  animation-timeline: view();
+  animation-range: contain;
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@layer general-styling {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    font-family: system-ui;
+    color-scheme: dark;
+  }
+}
