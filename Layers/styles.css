@@ -1,0 +1,60 @@
+@layer defaults, components, utilities;
+
+@layer defaults {
+  a:is(:link, :visited) {
+    /* low-priority layers are easy to override by default */
+    color: mediumvioletred;
+
+    /* but take priority with importance */
+    text-decoration: underline !important;
+  }
+}
+
+@layer utilities {
+  /* high-priority layers win by default */
+  .maroon {
+    color: maroon;
+  }
+}
+
+@layer components {
+  #call-to-action {
+    /* higher layers have lower priority with important styles */
+    text-decoration: none !important;
+    color: rebeccapurple;
+    font-size: 3rem;
+    display: inline-block;
+    border: medium solid;
+    padding: 0.25em 0.5em;
+    border-radius: 0.25em;
+  }
+}
+
+/* page layout */
+*,
+*::before,
+*::after {
+  /* margin: 0;
+  padding: 0; */
+  box-sizing: inherit;
+}
+
+html {
+  font-family: system-ui;
+  /* color-scheme: dark; */
+  box-sizing: border-box;
+  height: 100%;
+}
+
+body {
+  display: grid;
+  min-height: 100%;
+  place-content: center;
+  padding: 1em;
+}
+
+.container {
+  width: 100%;
+  max-width: 600px;
+  margin: 32px auto;
+}
