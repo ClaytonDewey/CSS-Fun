@@ -1,14 +1,16 @@
 body {
-  height: 250vh;
-  padding: 0;
+  height: 200vh;
+  /* padding: 0; */
+  padding: 16px;
   background: hsl(210deg 15% 6%);
   color: white;
 }
 p {
-  height: 100vh;
+  line-height: 2;
+  /* height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
 }
 .box {
   display: block;
@@ -52,6 +54,30 @@ p {
     display: block;
     width: 100%;
     height: 100%;
+  }
+}
+
+article {
+  padding-block: 32px;
+  max-width: 450px;
+  margin-inline: auto;
+}
+
+.readingIndicator {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background: goldenrod;
+  transform-origin: left center;
+  animation: expand linear;
+  animation-timeline: scroll();
+}
+
+@keyframes expand {
+  from {
+    transform: scaleX(0);
   }
 }
 
