@@ -1,0 +1,59 @@
+.overflow-scroller {
+  display: grid;
+  gap: 1rem;
+  grid-auto-flow: column;
+  grid-auto-columns: 300px;
+  overflow-x: scroll;
+
+  scroll-snap-type: x mandatory;
+
+  /* select the children */
+  & > * {
+    scroll-snap-align: center;
+    animation: scroller linear both;
+    animation-timeline: view(x);
+  }
+}
+
+@keyframes scroller {
+  0%,
+  100% {
+    opacity: 0.25;
+    scale: 0.75;
+  }
+
+  35%,
+  65% {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+.auto-grid {
+  --min-col-size: 300px;
+
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(var(--min-col-size), 100%), 1fr)
+  );
+}
+
+.sidebar-section {
+  container-type: inline-size;
+}
+
+.promo-list {
+  display: grid;
+  gap: 1rem;
+
+  @container (width > 500px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  & > li {
+    border-radius: 8px;
+    corner-shape: scoop;
+  }
+}
