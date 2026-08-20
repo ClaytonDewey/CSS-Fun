@@ -9,14 +9,126 @@
 </head>
 
 <body>
-  <button>Open the modal</button>
+  <div class="wrapper">
+    <header class="site-header">
+      <h1>The Longhand Society</h1>
+      <p class="tagline">
+        A writing club for people who still believe a sentence is worth getting
+        right.
+      </p>
+
+      <p>Get prompts, session notes, and occasional essays in your inbox.</p>
+
+
+
+
+
+
+      <button class="button" commandfor="newsletter-modal" command="show-modal">
+        Join the mailing list
+      </button>
+
+
+
+
+
+
+
+    </header>
+
+    <main>
+      <section class="about">
+        <div class="about__grid">
+          <div class="about__block">
+            <h2>We meet, we write, we read aloud.</h2>
+            <p>
+              Every second Thursday, a small group of writers gathers in a back
+              room above a bookshop on Grafton Street. We spend the first hour on
+              a prompt, the second reading what we made. No workshopping, no
+              grades. Just the work and the room.
+            </p>
+            <p>
+              Membership is open. You do not need to have published anything. You
+              need to want to write.
+            </p>
+          </div>
+          <aside class="about__details">
+            <dl class="meeting-details">
+              <div>
+                <dt>When</dt>
+                <dd>Every second Thursday, 7pm</dd>
+              </div>
+              <div>
+                <dt>Where</dt>
+                <dd>The Attic, Broderick Books, 14 Grafton Street</dd>
+              </div>
+              <div>
+                <dt>Cost</dt>
+                <dd>Free. Tea and biscuits provided.</dd>
+              </div>
+            </dl>
+          </aside>
+        </div>
+      </section>
+    </main>
+  </div>
+
+
+
+
+  <dialog class="modal" id="newsletter-modal">
+    <div class="modal__inner">
+      <header class="modal__header">
+        <h2>The Longhand Letter</h2>
+        <p>
+          A monthly dispatch from the club. Writing prompts, member work, and
+          notes from the room.
+        </p>
+      </header>
+      <form class="signup-form" method="dialog">
+        <div class="field">
+          <label for="name">Your name</label>
+          <input type="text" id="name" name="name" autocomplete="name" placeholder="How should we address you?" />
+        </div>
+        <div class="field">
+          <label for="email">Email address</label>
+          <input type="email" id="email" name="email" autocomplete="email" placeholder="your@email.com" required />
+        </div>
+        <div class="field">
+          <fieldset>
+            <legend>What brings you here?</legend>
+            <label class="checkbox-label">
+              <input type="checkbox" name="interest" value="prompts" />
+              Weekly prompts
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" name="interest" value="sessions" />
+              Session recaps
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" name="interest" value="essays" />
+              Essays and interviews
+            </label>
+          </fieldset>
+        </div>
+        <div class="modal__actions">
+          <button type="submit" class="button">Subscribe</button>
+          <button type="button" class="button button--ghost" commandfor="newsletter-modal" command="close">
+            Cancel
+          </button>
+        </div>
+      </form>
+    </div>
+  </dialog>
+
+  <!-- <button>Open the modal</button>
   <dialog>
     <h2>A pretty standard modal</h2>
     <button>Close the modal</button>
   </dialog>
 
   <a href="https://youtu.be/vmDEHAzj2XE" target="_blank">YouTube tutorial</a>
-  <script src="./index.js"></script>
+  <script src="./index.js"></script> -->
 </body>
 
 </html>
