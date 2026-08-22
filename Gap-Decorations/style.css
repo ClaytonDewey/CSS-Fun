@@ -1,0 +1,231 @@
+body {
+  font-family: system-ui;
+  font-size: 1.1rem;
+  background: #0d0d0d;
+  color: #efefef;
+  line-height: 1.6;
+
+  display: grid;
+  gap: 4rem;
+  margin: 2rem;
+  row-rule:
+    1rem solid #efefef,
+    repeat(auto, 2px solid #efefef);
+}
+
+a {
+  color: inherit;
+}
+
+h1,
+p {
+  margin: 0;
+}
+
+header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+header .tagline {
+  color: #999;
+  font-style: italic;
+  margin-top: 0.25rem;
+}
+
+section h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.photo img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+/* ---- Nav: dashed column rules between links ---------------------- */
+nav ul {
+  font-size: 1.2rem;
+
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  column-rule: 2px dashed #666;
+}
+
+.home {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+
+  row-rule: 2px solid #999;
+  column-rule: 2px solid #999;
+  /* rule: 2px solid #999; */
+  column-rule-inset: overlap-join;
+}
+
+.home > * {
+  flex: 1 1 12.5rem;
+}
+
+.home .greeting {
+  flex-basis: 26.25rem;
+}
+
+.home .note {
+  flex-basis: 22.5rem;
+}
+
+.home .photo {
+  flex-grow: 0;
+}
+
+.home .greeting .lead {
+  font-size: 1.35rem;
+  line-height: 1.4;
+}
+
+.home .greeting .lead strong {
+  font-weight: 600;
+}
+
+.home .now h3 {
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #999;
+  margin-bottom: 0.75rem;
+}
+
+.home .now ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.home .now li {
+  padding: 0.35rem 0;
+}
+
+.home .now li span {
+  color: #999;
+}
+
+/* ---- Blog: mixed-span grid of photo + title cards --------------- */
+.posts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+
+  rule: 2px solid #999;
+  rule-visibility-items: around;
+  rule-inset: overlap-join;
+}
+
+.post {
+  padding: 0.5rem 0.25rem;
+}
+
+.post .thumb {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  margin-bottom: 0.75rem;
+}
+
+.post .date {
+  display: block;
+  font-size: 0.85rem;
+  color: #999;
+  margin-bottom: 0.5rem;
+}
+
+.post h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.post p {
+  font-size: 0.95rem;
+  color: #cfcfcf;
+}
+
+.post.feature {
+  grid-column: span 2;
+}
+
+.post.feature .thumb {
+  aspect-ratio: 21 / 9;
+}
+
+.post.tall {
+  grid-row: span 2;
+}
+
+.post.tall .thumb {
+  /* A portrait crop so the taller card fills its two-row span */
+  aspect-ratio: 3 / 4;
+}
+
+.bio {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2.5rem;
+
+  column-rule: 2px solid #999;
+  column-rule-inset: 2.5rem;
+}
+
+.about .avatar {
+  flex: 0 0 auto;
+  width: 160px;
+  aspect-ratio: 1;
+  border-radius: 100vw;
+  object-fit: cover;
+}
+
+.about .bio .text {
+  flex: 1 1 30rem;
+}
+
+.about .bio .text p {
+  margin: 0 0 1rem;
+}
+
+.about .bio .text p:last-child {
+  margin-bottom: 0;
+}
+
+.links ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem 2.5rem;
+
+  row-rule: 1px solid #c9a96a;
+  column-rule: 3px solid #6a707a;
+
+  rule-overlap: column-over-row;
+
+  column-rule-inset-cap: 1.75rem;
+}
+
+.links li {
+  padding: 0.5rem 0.25rem;
+}
+
+footer {
+  color: #999;
+  font-size: 0.95rem;
+}

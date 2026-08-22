@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Patterns</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./highlight/styles/default.min.css">
+</head>
+
+<body>
+  <h1>Antiquated Colors</h1>
+  <p>
+  <pre>
+      <code class="language-css">
+    .these-are-the-same {
+      color: rgba(0, 0, 0, .5);
+      color: rgb(0, 0, 0, .5);
+      color: rgb(0 0 0 / .5);
+    }
+
+    .the-new-stuff-doesnt-use-commas {
+      color: hwb(0deg 0% 100% / 0.5);
+      color: oklch(0 0 0 / 0.5);
+      color: color(display-p3 0 0 0 / 0.5);
+    }
+      </code>
+    </pre>
+  </p>
+
+  <p>
+  <pre>
+      <code>
+    :root {
+      --my-color: #123;
+    }
+
+    .relative-colors-are-amazing {
+      color: oklch(from var(--my-color) l c h / .5);
+    }
+      </code>
+    </pre>
+  </p>
+
+  <script src="./highlight/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+</body>
+
+</html>
