@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Popovers</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <article class="post">
+      <div class="post__header">
+        <div class="post__meta">
+          <button class="author-trigger" popovertarget="author-popover">
+            <img src="https://i.pravatar.cc/150?img=47" alt="Maya Reeves" class="author-trigger__avatar" />
+            <span class="author-trigger__name">Clara Dough</span>
+          </button>
+          <time datetime="2026-05-07">May 7, 2026</time>
+          <span>8 min read</span>
+        </div>
+      </div>
+
+      <h1 class="post__title">
+        Popovers: Light, Airy, and Criminally Underrated
+      </h1>
+
+      <p class="post__excerpt">
+        Somewhere between a Yorkshire pudding and a dinner roll lives the popover,
+        a hollow vessel of pure potential. Bakers have long overlooked it in
+        favour of flashier breads, yet nothing else at the table rises so
+        dramatically from so little.
+      </p>
+
+      <div class="post__tags">
+        <span class="tag">Baking</span>
+        <span class="tag">Pastry</span>
+        <span class="tag">Brunch</span>
+      </div>
+    </article>
+  </div>
+
+  <div id="author-popover" popover class="author-popover">
+    <img src="https://i.pravatar.cc/150?img=47" alt="" class="author-popover__avatar" />
+    <div class="author-popover__body">
+      <p class="author-popover__name">Clara Dough</p>
+      <p class="author-popover__role">Pastry Writer</p>
+      <p class="author-popover__bio">
+        Clara has been writing about bread and butter since 2018. She is on a
+        personal mission to rehabilitate underappreciated baked goods, starting
+        with the popover, and has strong opinions about resting time, pan
+        temperature, and the hubris of sourdough
+      </p>
+      <div class="author-popover__links">
+        <a href="#">Website</a>
+        <a href="#">Substack</a>
+        <a href="#">Instagram</a>
+      </div>
+    </div>
+  </div>
+
+  <link rel="stylesheet" href="base-styles.css" />
+
+</body>
+
+</html>
